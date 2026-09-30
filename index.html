@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sauravi Lalge — AI / ML Engineer</title>
+
+  <meta
+    name="description"
+    content="Sauravi Lalge — AI practitioner building machine learning systems across language, vision, audio, retrieval, and real-world data."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0b0b0b;
+      --surface: #111111;
+      --surface-2: #171717;
+      --text: #f2f0eb;
+      --muted: #9a9a96;
+      --line: #292929;
+      --accent: #d7ff64;
+      --max-width: 1180px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 48px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* NAV */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 11, 11, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-content {
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-family: monospace;
+      font-size: 13px;
+      margin-bottom: 24px;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      max-width: 900px;
+      font-size: clamp(52px, 8vw, 104px);
+      line-height: 0.94;
+      letter-spacing: -0.065em;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin-top: 38px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.65;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 14px;
+      margin-top: 38px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #0b0b0b;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .button.primary:hover {
+      opacity: 0.85;
+      color: #0b0b0b;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 110px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .section-number {
+      color: var(--accent);
+      font-family: monospace;
+      font-size: 13px;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      font-weight: 500;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .project {
+      background: var(--surface);
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1fr 2fr auto;
+      gap: 30px;
+      align-items: start;
+      transition: background 0.2s ease;
+    }
+
+    .project:hover {
+      background: var(--surface-2);
+    }
+
+    .project-number {
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 13px;
+    }
+
+    .project h3 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .project p {
+      color: var(--muted);
+      max-width: 600px;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .project-meta {
+      text-align: right;
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    /* EXPERIENCE */
+
+    .experience {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .experience-item {
+      background: var(--surface);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+    }
+
+    .experience-company {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .experience-role {
+      color: var(--accent);
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    .experience-date {
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    .experience-description {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .about-text {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .about-text p + p {
+      margin-top: 22px;
+    }
+
+    .education {
+      display: grid;
+      gap: 30px;
+    }
+
+    .education-item {
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .education-item:last-child {
+      border-bottom: none;
+    }
+
+    .education-school {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .education-degree {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .education-date {
+      color: var(--accent);
+      font-family: monospace;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 4px;
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-content {
+      max-width: 850px;
+    }
+
+    .contact h2 {
+      font-size: clamp(46px, 7vw, 90px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-weight: 500;
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-top: 28px;
+      max-width: 580px;
+    }
+
+    .contact-links {
+      margin-top: 35px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      padding: 30px 0;
+      color: var(--muted);
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+      .container {
+        width: min(100% - 32px, var(--max-width));
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding: 90px 0;
+      }
+
+      .section-header {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 40px;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .project-meta {
+        text-align: left;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">SL.</a>
+
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="container hero-content">
+
+        <div class="eyebrow">
+          AI / MACHINE LEARNING
+        </div>
+
+        <h1>
+          Building intelligent systems from real-world data.
+        </h1>
+
+        <p class="hero-description">
+          I'm Sauravi Lalge, an AI practitioner focused on building
+          machine learning systems across language, vision, audio,
+          retrieval, and real-world operational data.
+        </p>
+
+        <div class="hero-links">
+          <a
+            href="#work"
+            class="button primary"
+          >
+            Explore my work ↓
+          </a>
+
+          <a
+            href="https://github.com/sauravi-5"
+            target="_blank"
+            class="button"
+          >
+            GitHub ↗
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/sauravilalge/"
+            target="_blank"
+            class="button"
+          >
+            LinkedIn ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- WORK -->
+
+    <section id="work">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">01 / SELECTED WORK</div>
+
+          <h2 class="section-title">
+            Systems I've built.
+          </h2>
+        </div>
+
+
+        <div class="projects">
+
+          <article class="project">
+
+            <div class="project-number">01</div>
+
+            <div>
+              <h3>StockSensei</h3>
+
+              <p>
+                An LLM-based financial query assistant using
+                Hugging Face Transformers, FAISS, embeddings,
+                and semantic retrieval to answer questions
+                across five equities.
+              </p>
+            </div>
+
+            <div class="project-meta">
+              LLM / RAG / FAISS
+            </div>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-number">02</div>
+
+            <div>
+              <h3>Tumor Segmentation + Synthetic MRI</h3>
+
+              <p>
+                A medical imaging pipeline using U-Net/CNN
+                segmentation and GAN-based synthetic MRI
+                augmentation across 22,500+ MRI images and
+                DICOM files.
+              </p>
+            </div>
+
+            <div class="project-meta">
+              COMPUTER VISION / GAN
+            </div>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-number">03</div>
+
+            <div>
+              <h3>Predicting Influencer Outreach</h3>
+
+              <p>
+                A graph neural network project exploring
+                relationships between social media content
+                and engagement, developed as an academic
+                capstone and presented at the ISDSI-G Conference.
+              </p>
+            </div>
+
+            <div class="project-meta">
+              GNN / GRAPH ML
+            </div>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-number">04</div>
+
+            <div>
+              <h3>Multilingual Hospitality Intelligence</h3>
+
+              <p>
+                Applied BERTopic and sentiment analysis to
+                300K multilingual Airbnb reviews to identify
+                topic clusters and seven service-quality drivers.
+              </p>
+            </div>
+
+            <div class="project-meta">
+              NLP / TOPIC MODELING
+            </div>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-number">05</div>
+
+            <div>
+              <h3>Resume Information Extraction</h3>
+
+              <p>
+                A BERT-based resume parser trained on 250
+                labeled resumes, achieving approximately 80%
+                entity accuracy while reducing screening time
+                by 70%.
+              </p>
+            </div>
+
+            <div class="project-meta">
+              NLP / BERT / NER
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">02 / EXPERIENCE</div>
+
+          <h2 class="section-title">
+            Applied ML, in practice.
+          </h2>
+        </div>
+
+
+        <div class="experience">
+
+          <article class="experience-item">
+
+            <div>
+              <div class="experience-company">
+                Virufy
+              </div>
+
+              <div class="experience-role">
+                MACHINE LEARNING INTERN
+              </div>
+
+              <div class="experience-date">
+                JUL — AUG 2025 · CHICAGO
+              </div>
+            </div>
+
+            <div class="experience-description">
+              Developed machine learning workflows across
+              2,000 cough and breath recordings. Migrated
+              workflows to AWS, reducing runtime by approximately
+              30–35%, and standardized reproducible model
+              development.
+            </div>
+
+          </article>
+
+
+          <article class="experience-item">
+
+            <div>
+              <div class="experience-company">
+                PSA International
+              </div>
+
+              <div class="experience-role">
+                DATA SCIENCE INTERN
+              </div>
+
+              <div class="experience-date">
+                JAN — JUL 2024 · MUMBAI
+              </div>
+            </div>
+
+            <div class="experience-description">
+              Clustered 200+ rail routes and developed
+              dashboards across 120+ ICDs and CFSs. Automated
+              Python data processing and worked with 20 years
+              of geospatial container-volume data for forecasting.
+            </div>
+
+          </article>
+
+
+          <article class="experience-item">
+
+            <div>
+              <div class="experience-company">
+                Utkarshini Edutech
+              </div>
+
+              <div class="experience-role">
+                ML INTERN
+              </div>
+
+              <div class="experience-date">
+                MAR — DEC 2023 · MUMBAI
+              </div>
+            </div>
+
+            <div class="experience-description">
+              Applied BERTopic to 300K multilingual Airbnb
+              reviews, combining topic modeling and sentiment
+              analysis to identify seven major service-quality
+              drivers.
+            </div>
+
+          </article>
+
+
+          <article class="experience-item">
+
+            <div>
+              <div class="experience-company">
+                Signity Software Solutions
+              </div>
+
+              <div class="experience-role">
+                ML INTERN
+              </div>
+
+              <div class="experience-date">
+                MAR 2022 — FEB 2023 · MUMBAI
+              </div>
+            </div>
+
+            <div class="experience-description">
+              Built a BERT-based resume parser using 250 labeled
+              resumes, achieving approximately 80% entity
+              accuracy and reducing manual screening time by 70%.
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">03 / ABOUT</div>
+
+          <h2 class="section-title">
+            Data → models → systems.
+          </h2>
+        </div>
+
+
+        <div class="about-grid">
+
+          <div class="about-text">
+
+            <p>
+              I'm currently completing a Master of Applied Science
+              in Artificial Intelligence at Illinois Institute of
+              Technology.
+            </p>
+
+            <p>
+              My work sits at the intersection of machine learning
+              research and practical systems — from NLP and
+              retrieval to computer vision, audio, graphs,
+              forecasting, and data pipelines.
+            </p>
+
+            <p>
+              I'm particularly interested in building systems
+              where the model is only one part of the solution:
+              understanding the data, designing the representation,
+              evaluating the system, and making the result useful.
+            </p>
+
+          </div>
+
+
+          <div class="education">
+
+            <div class="education-item">
+
+              <div class="education-school">
+                Illinois Institute of Technology
+              </div>
+
+              <div class="education-degree">
+                Master of Applied Science · Artificial Intelligence
+              </div>
+
+              <div class="education-date">
+                AUG 2024 — MAY 2026
+              </div>
+
+            </div>
+
+
+            <div class="education-item">
+
+              <div class="education-school">
+                NMIMS University
+              </div>
+
+              <div class="education-degree">
+                B.Tech · Data Science · GPA 3.53 / 4.00
+              </div>
+
+              <div class="education-date">
+                JUL 2020 — APR 2024
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- TOOLKIT -->
+
+    <section>
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">04 / TOOLKIT</div>
+
+          <h2 class="section-title">
+            Technologies I work with.
+          </h2>
+        </div>
+
+
+        <div class="skills">
+
+          <span class="skill">Python</span>
+          <span class="skill">SQL</span>
+          <span class="skill">R</span>
+          <span class="skill">PyTorch</span>
+          <span class="skill">TensorFlow</span>
+          <span class="skill">Scikit-learn</span>
+          <span class="skill">Hugging Face</span>
+          <span class="skill">BERT</span>
+          <span class="skill">LLMs</span>
+          <span class="skill">RAG</span>
+          <span class="skill">FAISS</span>
+          <span class="skill">BERTopic</span>
+          <span class="skill">CNN</span>
+          <span class="skill">U-Net</span>
+          <span class="skill">GANs</span>
+          <span class="skill">Graph ML</span>
+          <span class="skill">Time Series</span>
+          <span class="skill">AWS</span>
+          <span class="skill">Docker</span>
+          <span class="skill">FastAPI</span>
+          <span class="skill">Git</span>
+          <span class="skill">DICOM</span>
+          <span class="skill">Power BI</span>
+          <span class="skill">Tableau</span>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="contact-content">
+
+          <div class="eyebrow">
+            05 / CONTACT
+          </div>
+
+          <h2>
+            Let's build something useful.
+          </h2>
+
+          <p>
+            I'm interested in AI / ML engineering and data-driven
+            systems where machine learning has a real application.
+          </p>
+
+          <div class="contact-links">
+
+            <a
+              href="mailto:sauravilalgesb@gmail.com"
+              class="button primary"
+            >
+              Email me ↗
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/sauravilalge/"
+              target="_blank"
+              class="button"
+            >
+              LinkedIn ↗
+            </a>
+
+            <a
+              href="https://github.com/sauravi-5"
+              target="_blank"
+              class="button"
+            >
+              GitHub ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container">
+      © 2026 Sauravi Lalge · Built with HTML, CSS & curiosity.
+    </div>
+  </footer>
+
+</body>
+</html>
